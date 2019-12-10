@@ -1,4 +1,4 @@
-package com.kakaopay.url.shortening.web;
+package com.kakaopay.url.shortening.shortenurl.web;
 
 import org.springframework.stereotype.Controller;
 
