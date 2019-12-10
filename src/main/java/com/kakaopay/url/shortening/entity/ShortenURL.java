@@ -1,12 +1,11 @@
-package com.kakaopay.url.shortening.shortenurl.entity;
+package com.kakaopay.url.shortening.entity;
 
 import lombok.Getter;
 
 import javax.persistence.*;
 
-@Entity
 @Getter
-@Table(name = "shorten_url")
+@Entity(name = "shorten_url")
 public class ShortenURL {
 
     @Id

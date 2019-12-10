@@ -1,4 +1,4 @@
-package com.kakaopay.url.shortening.shortenurl.api;
+package com.kakaopay.url.shortening.api;
 
 import org.springframework.web.bind.annotation.RestController;
 
