@@ -27,7 +27,7 @@ public class ShorteningKeyApiController {
             generatedKey = optionalShorteningKey.get().getShortenUrl();
 
         } else {
-            generatedKey = this.shorteningKeyService.shortenKey();
+            generatedKey = this.shorteningKeyService.createShortenKey();
             this.shorteningKeyService.saveShorteningKey(shorteningKeyRequestDto.getOriginUrl(), generatedKey);
         }
         return ResponseEntity.ok(generatedKey);

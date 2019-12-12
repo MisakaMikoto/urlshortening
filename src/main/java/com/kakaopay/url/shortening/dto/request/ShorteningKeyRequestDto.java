@@ -1,10 +1,12 @@
 package com.kakaopay.url.shortening.dto.request;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import javax.validation.constraints.NotNull;
 
 @Getter
+@Setter
 public class ShorteningKeyRequestDto {
 
     @NotNull
@@ -12,8 +14,4 @@ public class ShorteningKeyRequestDto {
 
     @NotNull
     String shortenUrl;
-
-    public ShorteningKeyRequestDto(String originUrl) {
-        this.originUrl = originUrl;
-    }
 }

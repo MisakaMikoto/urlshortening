@@ -1,6 +1,7 @@
 package com.kakaopay.url.shortening.entity;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 import javax.persistence.*;
@@ -16,6 +17,7 @@ import java.time.LocalDateTime;
         columnNames = {"originUrl", "shortenUrl"}
     )
 })
+@NoArgsConstructor
 public class ShorteningKey {
 
     @Id
@@ -23,14 +25,11 @@ public class ShorteningKey {
     long shortenUrlId;
 
     @NotNull
-    @Column
     String originUrl;
 
     @NotNull
-    @Column
     String shortenUrl;
 
-    @Column
     LocalDateTime createdAt;
 
     public ShorteningKey(String originUrl, String shorteningUrl) {

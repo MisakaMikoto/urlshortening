@@ -4,8 +4,9 @@ import java.util.Random;
 
 public class ShorteningKeyGenerator {
 
-    private final static int ALPHABET_LENGTH = 26;
     private final static int SHORTENING_MAX_LENGTH = 8;
+
+    private final static int ALPHABET_LENGTH = 26;
     private final static int ALPHABET_UPPER_CASE_FIRST_ASCII_INDEX = 65;
     private final static int ALPHABET_LOWER_CASE_FIRST_ASCII_INDEX = 97;
 

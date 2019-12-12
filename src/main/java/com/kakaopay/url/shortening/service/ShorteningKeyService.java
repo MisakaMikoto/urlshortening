@@ -20,16 +20,16 @@ public class ShorteningKeyService {
         return this.shorteningKeyRepository.findByOriginUrl(shorteningKeyRequestDto.getOriginUrl());
     }
 
-    public String shortenKey() {
+    public String createShortenKey() {
 
         ShorteningKeyGenerator shorteningKeyGenerator = new ShorteningKeyGenerator();
         return String.valueOf(shorteningKeyGenerator.generate());
     }
 
     @Transactional
-    public void saveShorteningKey(String originUrl, String shorteningKey) {
+    public ShorteningKey saveShorteningKey(String originUrl, String shorteningKey) {
 
         ShorteningKey shorteningKeyEntity = new ShorteningKey(originUrl, shorteningKey);
-        this.shorteningKeyRepository.save(shorteningKeyEntity);
+        return this.shorteningKeyRepository.save(shorteningKeyEntity);
     }
 }
