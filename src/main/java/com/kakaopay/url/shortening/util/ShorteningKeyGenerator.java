@@ -2,7 +2,7 @@ package com.kakaopay.url.shortening.util;
 
 import java.util.Random;
 
-public class ShorteningURLGenerator {
+public class ShorteningKeyGenerator {
 
     private final static int ALPHABET_LENGTH = 26;
     private final static int SHORTENING_MAX_LENGTH = 8;

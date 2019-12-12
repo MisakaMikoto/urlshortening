@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/url/shortening")
-public class ShorteningWebController {
+public class ShorteningKeyWebController {
 
     @GetMapping("/index")
     public String index() {
