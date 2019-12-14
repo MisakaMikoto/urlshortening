@@ -1,6 +1,5 @@
 package com.kakaopay.url.shortening.service;
 
-import com.kakaopay.url.shortening.dto.request.ShorteningKeyRequestDto;
 import com.kakaopay.url.shortening.entity.ShorteningKey;
 import com.kakaopay.url.shortening.repository.ShorteningKeyRepository;
 import com.kakaopay.url.shortening.util.ShorteningKeyGenerator;
@@ -16,11 +15,11 @@ public class ShorteningKeyService {
 
     private final ShorteningKeyRepository shorteningKeyRepository;
 
-    public Optional<ShorteningKey> findShorteningKey(ShorteningKeyRequestDto shorteningKeyRequestDto) {
-        return this.shorteningKeyRepository.findByOriginUrl(shorteningKeyRequestDto.getOriginUrl());
+    public Optional<ShorteningKey> findShorteningKey(String originUrl) {
+        return this.shorteningKeyRepository.findByOriginUrl(originUrl);
     }
 
-    public String createShortenKey() {
+    public String createShorteningKey() {
 
         ShorteningKeyGenerator shorteningKeyGenerator = new ShorteningKeyGenerator();
         return String.valueOf(shorteningKeyGenerator.generate());
@@ -31,5 +30,9 @@ public class ShorteningKeyService {
 
         ShorteningKey shorteningKeyEntity = new ShorteningKey(originUrl, shorteningKey);
         return this.shorteningKeyRepository.save(shorteningKeyEntity);
+    }
+
+    public Optional<ShorteningKey> findOriginUrl(String shorteningKey) {
+        return this.shorteningKeyRepository.findByShorteningKey(shorteningKey);
     }
 }

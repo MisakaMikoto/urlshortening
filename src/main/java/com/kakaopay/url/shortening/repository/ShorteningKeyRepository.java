@@ -10,4 +10,6 @@ import java.util.Optional;
 public interface ShorteningKeyRepository extends JpaRepository<ShorteningKey, Long> {
 
     Optional<ShorteningKey> findByOriginUrl(String originUrl);
+
+    Optional<ShorteningKey> findByShorteningKey(String shorteningKey);
 }

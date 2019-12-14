@@ -3,10 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+
+    <script type="module" src="/js/shortening/Shortening.js"></script>
 </head>
 <body>
 
-<div id="shortening_container">
+<div id="container">
+    <div id="shortening">
+        <div>
+            <span> 요청 URL : </span>
+            <input type="text" id="request" style="width: 500px;"/>
+            <button id="generate"> 변환 </button>
+            <button id="clear"> 초기화 </button>
+        </div>
+
+        <div>
+            <span> 변환 URL : </span>
+            <input type="text" id="response" disabled="disabled" style="width: 500px;"/>
+            <button id="redirect" style="display: none"> 이동 </button>
+        </div>
+    </div>
 </div>
 
 </body>

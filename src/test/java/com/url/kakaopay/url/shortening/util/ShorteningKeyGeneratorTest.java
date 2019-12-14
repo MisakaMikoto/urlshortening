@@ -37,10 +37,10 @@ public class ShorteningKeyGeneratorTest {
         }
     }
 
-    // private method test
     @Test
     void test_랜덤_대문자_생성하기() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException {
 
+        // private method test
         Method method = shorteningKeyGenerator.getClass().getDeclaredMethod("generateUpperCase");
         method.setAccessible(true);
         char upperCase = (char) method.invoke(shorteningKeyGenerator);
@@ -51,10 +51,10 @@ public class ShorteningKeyGeneratorTest {
         }
     }
 
-    // private method test
     @Test
     void test_랜덤_소문자_생성하기() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
 
+        // private method test
         Method method = shorteningKeyGenerator.getClass().getDeclaredMethod("generateLowerCase");
         method.setAccessible(true);
         char lowerCase = (char) method.invoke(shorteningKeyGenerator);

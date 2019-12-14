@@ -35,7 +35,7 @@ public class ShorteningKeyServiceTest {
     @Test
     void test_단축_키_만들기() {
 
-        String generatedKey = shorteningKeyService.createShortenKey();
+        String generatedKey = shorteningKeyService.createShorteningKey();
 
         for(int i = 0; i < TEST_MAX_COUNT; i++) {
             boolean isContainsNumber = generatedKey.matches(".*\\d.*");
@@ -49,13 +49,13 @@ public class ShorteningKeyServiceTest {
     @Test
     void test_단축_키_저장() {
 
-        String generatedKey = shorteningKeyService.createShortenKey();
-        shorteningKeyRequestDto.setShortenUrl(generatedKey);
+        String generatedKey = shorteningKeyService.createShorteningKey();
+        shorteningKeyRequestDto.setShorteningKey(generatedKey);
 
         ShorteningKey shorteningKey =
-                shorteningKeyService.saveShorteningKey(shorteningKeyRequestDto.getOriginUrl(), shorteningKeyRequestDto.getShortenUrl());
+                shorteningKeyService.saveShorteningKey(shorteningKeyRequestDto.getOriginUrl(), shorteningKeyRequestDto.getShorteningKey());
 
         Assertions.assertEquals(shorteningKeyRequestDto.getOriginUrl(), shorteningKey.getOriginUrl());
-        Assertions.assertEquals(shorteningKeyRequestDto.getShortenUrl(), shorteningKey.getShortenUrl());
+        Assertions.assertEquals(shorteningKeyRequestDto.getShorteningKey(), shorteningKey.getShorteningKey());
     }
 }

@@ -12,6 +12,5 @@ public class ShorteningKeyRequestDto {
     @NotNull
     String originUrl;
 
-    @NotNull
-    String shortenUrl;
+    String shorteningKey;
 }

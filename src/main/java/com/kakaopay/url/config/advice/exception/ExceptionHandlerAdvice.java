@@ -1,4 +1,4 @@
-package com.kakaopay.url.config.exception.hanlder;
+package com.kakaopay.url.config.advice.exception;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,7 +19,7 @@ public class ExceptionHandlerAdvice {
 
     @ResponseBody
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<String> exceptionHandler(Exception exception) {
+    public ResponseEntity<String> handleException(Exception exception) {
 
         log.error("exception : {} ", exception.getMessage());
         return ResponseEntity
@@ -28,11 +28,21 @@ public class ExceptionHandlerAdvice {
     }
 
     @ResponseBody
+    @ExceptionHandler(IllegalStateException.class)
+    public ResponseEntity<String> handleIllegalStateException(IllegalStateException illegalStateException) {
+
+        log.error("illegal state exception : {} ", illegalStateException.getMessage());
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(messageSourceAccessor.getMessage("error.illegal_state_exception"));
+    }
+
+    @ResponseBody
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<String> methodArgumentNotValidException(
             MethodArgumentNotValidException methodArgumentNotValidException) {
 
-        log.error("exception : {} ", methodArgumentNotValidException.getMessage());
+        log.error("method argument exception : {} ", methodArgumentNotValidException.getMessage());
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
                 .body(messageSourceAccessor.getMessage("err.bad_request"));
