@@ -6,19 +6,19 @@
     - http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
     
   - Download Guide
-    - Download - https://github.com/MisakaMikoto/SpringBoot-API -> clone or download -> zip download
+    - Download - https://github.com/MisakaMikoto/urlshortening -> download -> zip download
     - extracting zip file
-    - cmd or terminal open. move to the extracting file(zip) root folder path (ex: c:/document/springBoot-API/)
-    - build : gradlew build (build + jUnit test)
+    - cmd or terminal open. move to the extracting file root path (ex: c:/document/urlshortening/)    
+    - build : gradlew build (build + jUnit test)    
     - run : gradlew bootRun
 
   - Clone Guide
     - Checkout - https://github.com/MisakaMikoto/SpringBoot-API.git
-    - cmd or terminal open. move to the checkout file root folder path (ex: c:/document/springBoot-API/)
-    - build : gradlew build (build + jUnit test)
+    - cmd or terminal open. move to the checkout path (ex: c:/document/springBoot-API/)    
+    - build : gradlew build (build + jUnit test)    
     - run : gradlew bootRun
     
-  - Execute Browser
+  - Working browser
     - Chrome
 
 - problem solving
