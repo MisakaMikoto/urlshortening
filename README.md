@@ -1,4 +1,4 @@
-# SpringBoot-API
+# URL Shortening
 
 - Install & Execute Guide
 
