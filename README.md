@@ -14,7 +14,7 @@
 
   - Clone Guide
     - Checkout url - https://github.com/MisakaMikoto/urlshortening.git
-    - cmd or terminal open. move to the checkout path (ex: c:/document/springBoot-API/)    
+    - cmd or terminal open. move to the checkout path (ex: c:/document/urlshortening/)
     - build : gradlew build (build + jUnit test)    
     - run : gradlew bootRun
     
