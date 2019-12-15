@@ -19,6 +19,8 @@ export class Shortening {
             this.$container.find('#redirect').show();
 
         }, (error) => {
+            this.$container.find('#response').val('');
+            alert(error);
             console.error('Failed!', error);
         });
     }
@@ -36,7 +38,8 @@ export class Shortening {
             window.location.href = result.originUrl;
 
         }, (error) => {
-            return error;
+            alert(error);
+            console.error('Failed!', error);
         });
     }
 

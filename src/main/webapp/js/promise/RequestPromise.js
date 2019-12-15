@@ -12,7 +12,7 @@ export default class RequestPromise {
                     resolve(req.response);
                 }
                 else {
-                    reject(Error(req.statusText));
+                    reject(Error(req.responseText));
                 }
             };
 
@@ -37,7 +37,7 @@ export default class RequestPromise {
                     resolve(req.response);
                 }
                 else {
-                    reject(Error(req.statusText));
+                    reject(Error(req.responseText));
                 }
             };
 

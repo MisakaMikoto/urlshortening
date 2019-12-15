@@ -4,7 +4,6 @@ import com.kakaopay.url.UrlshorteningApplication;
 import com.kakaopay.url.shortening.dto.request.ShorteningKeyRequestDto;
 import com.kakaopay.url.shortening.entity.ShorteningKey;
 import com.kakaopay.url.shortening.service.ShorteningKeyService;
-import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -13,7 +12,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureWebM
 import org.springframework.boot.test.context.SpringBootTest;
 
 @AutoConfigureWebMvc
-@RequiredArgsConstructor
 @SpringBootTest(classes={UrlshorteningApplication.class})
 public class ShorteningKeyServiceTest {
 
@@ -24,6 +22,7 @@ public class ShorteningKeyServiceTest {
 
     @Autowired
     private ShorteningKeyService shorteningKeyService;
+
     private static ShorteningKeyRequestDto shorteningKeyRequestDto = new ShorteningKeyRequestDto();
 
     @BeforeAll

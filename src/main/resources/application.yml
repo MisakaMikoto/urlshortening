@@ -1,4 +1,5 @@
 spring:
+  server.tomcat.uri-encoding: UTF-8
   datasource:
     platform: h2
     jdbc-url: jdbc:h2:mem://localhost/~/shortening;

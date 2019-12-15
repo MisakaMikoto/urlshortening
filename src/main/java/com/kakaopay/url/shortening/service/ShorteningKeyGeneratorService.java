@@ -1,8 +1,11 @@
-package com.kakaopay.url.shortening.generator;
+package com.kakaopay.url.shortening.service;
+
+import org.springframework.stereotype.Service;
 
 import java.util.Random;
 
-public class ShorteningKeyGenerator {
+@Service
+public class ShorteningKeyGeneratorService {
 
     private final static int SHORTENING_MIN_LENGTH = 4;
     private final static int SHORTENING_MAX_LENGTH = 8;
