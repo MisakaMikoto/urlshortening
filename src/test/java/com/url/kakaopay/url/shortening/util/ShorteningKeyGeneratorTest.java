@@ -1,6 +1,6 @@
 package com.url.kakaopay.url.shortening.util;
 
-import com.kakaopay.url.shortening.util.ShorteningKeyGenerator;
+import com.kakaopay.url.shortening.generator.ShorteningKeyGenerator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -11,8 +11,11 @@ import java.lang.reflect.Method;
 public class ShorteningKeyGeneratorTest {
 
     private final static int TEST_MAX_COUNT = 100;
-    private final static int ALPHABET_LENGTH = 26;
+
+    private final static int SHORTENING_MIN_LENGTH = 4;
     private final static int SHORTENING_MAX_LENGTH = 8;
+
+    private final static int ALPHABET_LENGTH = 26;
     private final static int ALPHABET_UPPER_CASE_FIRST_ASCII_INDEX = 65;
     private final static int ALPHABET_LOWER_CASE_FIRST_ASCII_INDEX = 97;
 

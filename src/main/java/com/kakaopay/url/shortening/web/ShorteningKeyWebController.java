@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/url/shortening")
+@RequestMapping
 public class ShorteningKeyWebController {
 
-    @GetMapping("/index")
+    @GetMapping("/url/shortening")
     public String index() {
         return "shortening/index";
     }

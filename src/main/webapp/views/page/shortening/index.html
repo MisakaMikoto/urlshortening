@@ -8,23 +8,27 @@
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
             crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+
     <script type="module" src="/js/shortening/Shortening.js"></script>
 </head>
 <body>
 
 <div id="container">
-    <div id="shortening">
-        <div>
-            <span> 요청 URL : </span>
-            <input type="text" id="request" style="width: 500px;"/>
-            <button id="generate"> 변환 </button>
-            <button id="clear"> 초기화 </button>
+    <div class="input-group" style="width: 500px; margin-left: 20px; margin-top: 20px;">
+        <input type="text" id="request" class="form-control" placeholder="요청 URL" aria-label="요청 URL" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+            <button id="generate" class="btn btn-outline-secondary" type="button">변환</button>
+            <button id="clear" class="btn btn-outline-secondary" type="button">초기화</button>
         </div>
+    </div>
 
-        <div>
-            <span> 변환 URL : </span>
-            <input type="text" id="response" disabled="disabled" style="width: 500px;"/>
-            <button id="redirect" style="display: none"> 이동 </button>
+    <div class="input-group" style="width: 500px; margin-left: 20px; margin-top: 20px;">
+        <input type="text" id="response" class="form-control" placeholder="변환 URL" aria-label="변환 URL" aria-describedby="basic-addon2" disabled="disabled">
+        <div class="input-group-append">
+            <button id="redirect" class="btn btn-outline-secondary" type="button" style="display: none">이동</button>
         </div>
     </div>
 </div>

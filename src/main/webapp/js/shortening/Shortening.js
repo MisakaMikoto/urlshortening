@@ -14,7 +14,8 @@ export class Shortening {
 
     requestShortening() {
         this.commonRequestPromise.post(this.shorteningKeyUrl, this.createRequestParam()).then((response) => {
-            this.$container.find('#response').val(response.shorteningKey);
+            const result = JSON.parse(response);
+            this.$container.find('#response').val(result.shorteningKey);
             this.$container.find('#redirect').show();
 
         }, (error) => {
@@ -30,8 +31,9 @@ export class Shortening {
 
     requestRedirect() {
         this.commonRequestPromise.get(this.createRedirectUrl()).then((response) => {
-            alert(response.originUrl + ' 로 이동합니다.');
-            window.location.href = response.originUrl;
+            const result = JSON.parse(response);
+            alert(result.originUrl + ' 로 이동합니다.');
+            window.location.href = result.originUrl;
 
         }, (error) => {
             return error;

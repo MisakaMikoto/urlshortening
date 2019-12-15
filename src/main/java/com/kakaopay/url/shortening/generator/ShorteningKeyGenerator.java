@@ -1,9 +1,10 @@
-package com.kakaopay.url.shortening.util;
+package com.kakaopay.url.shortening.generator;
 
 import java.util.Random;
 
 public class ShorteningKeyGenerator {
 
+    private final static int SHORTENING_MIN_LENGTH = 4;
     private final static int SHORTENING_MAX_LENGTH = 8;
 
     private final static int ALPHABET_LENGTH = 26;
@@ -12,7 +13,9 @@ public class ShorteningKeyGenerator {
 
     public char[] generate() {
 
-        char[] shorteningURL = new char[SHORTENING_MAX_LENGTH];
+        int randomShorteningLength = this.createRandomShorteningMaxLength();
+        char[] shorteningURL = new char[randomShorteningLength];
+
         for(int i = 0; i < shorteningURL.length; i++) {
             if(this.isUpperCase()) {
                 shorteningURL[i] = this.generateUpperCase();
@@ -22,6 +25,10 @@ public class ShorteningKeyGenerator {
             }
         }
         return shorteningURL;
+    }
+
+    private int createRandomShorteningMaxLength() {
+        return (int) (Math.random() * (SHORTENING_MAX_LENGTH - SHORTENING_MIN_LENGTH + 1)) + SHORTENING_MIN_LENGTH;
     }
 
     private boolean isUpperCase() {

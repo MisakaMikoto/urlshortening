@@ -60,6 +60,6 @@ public class ShorteningKeyApiController {
     }
 
     private String getDomainUrl(HttpServletRequest httpServletRequest) {
-        return httpServletRequest.getRequestURL().toString().split(httpServletRequest.getRequestURI())[0];
+        return httpServletRequest.getRequestURL().toString().split(httpServletRequest.getRequestURI())[0] + "/";
     }
 }

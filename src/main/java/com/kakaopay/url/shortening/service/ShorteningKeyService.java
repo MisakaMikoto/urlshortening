@@ -2,7 +2,7 @@ package com.kakaopay.url.shortening.service;
 
 import com.kakaopay.url.shortening.entity.ShorteningKey;
 import com.kakaopay.url.shortening.repository.ShorteningKeyRepository;
-import com.kakaopay.url.shortening.util.ShorteningKeyGenerator;
+import com.kakaopay.url.shortening.generator.ShorteningKeyGenerator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
