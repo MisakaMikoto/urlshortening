@@ -33,4 +33,6 @@
     - 단축 URL 문자열 타입 : 오직 영문자만 사용했으며, 1 character 당 영문 대소문자를 랜덤으로 생성합니다.
     
     - 요청 URL Redirect : 서버에서 redirect 시 CORS 가 발생하기 때문에 서버에서는 Redirect 할 주소 결과만 반환합니다.
-                          Frontend 에서 반횐된 주소를 받아 window.location.href 를 진행 합니다.   
+                          Frontend 에서 반횐된 주소를 받아 window.location.href 를 진행 합니다.
+                          
+            
