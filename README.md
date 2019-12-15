@@ -30,7 +30,7 @@
                              해당 내용이 H2 데이터 베이스에 있는 경우에는 찾은 결과를 반환.
                             
     - 단축 URL 길이 : 4 ~ 8 문자열을 랜덤으로 생성.
-    - 단축 URL 문자열 타입 : 오직 영문자만 사용했으며, 1 character 당 영문 대소문자를 랜덤으로 생성.
+    - 단축 URL 문자열 타입 : 오직 영문자만 사용했으며, 1 character 당 영문 대소문자를 랜덤으로 생성. (ASCII 코드 사용)
     
     - 요청 URL Redirect : 서버에서 redirect 시 CORS 가 발생하기 때문에 서버에서는 Redirect 할 주소 결과만 반환.
                           Frontend 에서 반횐된 주소를 받아 redirect.
