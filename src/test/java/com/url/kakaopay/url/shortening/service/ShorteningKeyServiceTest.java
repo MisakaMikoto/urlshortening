@@ -18,17 +18,18 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class ShorteningKeyServiceTest {
 
     private final static int TEST_MAX_COUNT = 100;
+
+    private final static int SHORTENING_MIN_LENGTH = 4;
     private final static int SHORTENING_MAX_LENGTH = 8;
 
     @Autowired
     private ShorteningKeyService shorteningKeyService;
-    private static ShorteningKeyRequestDto shorteningKeyRequestDto;
+    private static ShorteningKeyRequestDto shorteningKeyRequestDto = new ShorteningKeyRequestDto();
 
     @BeforeAll
     static void beforeAll() {
 
-        String originUrl = "https://www.naver.com";
-        shorteningKeyRequestDto = new ShorteningKeyRequestDto();
+        String originUrl = "https://www.kakaopay.com/";
         shorteningKeyRequestDto.setOriginUrl(originUrl);
     }
 
@@ -40,11 +41,11 @@ public class ShorteningKeyServiceTest {
         for(int i = 0; i < TEST_MAX_COUNT; i++) {
             boolean isContainsNumber = generatedKey.matches(".*\\d.*");
 
-            Assertions.assertEquals(generatedKey.length(), SHORTENING_MAX_LENGTH);
+            Assertions.assertTrue(generatedKey.length() >= SHORTENING_MIN_LENGTH);
+            Assertions.assertTrue(generatedKey.length() <= SHORTENING_MAX_LENGTH);
             Assertions.assertFalse(isContainsNumber);
         }
     }
-
 
     @Test
     void test_단축_키_저장() {

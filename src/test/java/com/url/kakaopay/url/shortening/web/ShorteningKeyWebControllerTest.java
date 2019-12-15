@@ -1,27 +1,31 @@
 package com.url.kakaopay.url.shortening.web;
 
 import com.kakaopay.url.UrlshorteningApplication;
-import com.kakaopay.url.shortening.web.ShorteningKeyWebController;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureWebMvc;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@AutoConfigureWebMvc
+@AutoConfigureMockMvc
 @RequiredArgsConstructor
 @SpringBootTest(classes={UrlshorteningApplication.class})
 public class ShorteningKeyWebControllerTest {
 
-    private final MockMvc mockMvc;
+    @Autowired
+    private MockMvc mockMvc;
 
-    private final ShorteningKeyWebController shorteningKeyWebController;
+    private static final String SHORTENING_KEY_WEB_CONTROLLER_URL = "/url/shortening";
 
     @Test
-    public void testShorteningKeyWebController( ) throws Exception {
-//        this.mockMvc.perform(get("/v1/account/logout"))
-//                .andDo(print())
-//                .andExpect(status().isOk());
-    }
+    public void test_단축키_WEB_컨트롤러_실행하기() throws Exception {
 
+        this.mockMvc.perform(get(SHORTENING_KEY_WEB_CONTROLLER_URL))
+                .andDo(print())
+                .andExpect(status().isOk());
+    }
 }

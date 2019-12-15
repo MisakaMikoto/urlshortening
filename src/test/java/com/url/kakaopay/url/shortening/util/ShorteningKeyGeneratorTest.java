@@ -19,12 +19,7 @@ public class ShorteningKeyGeneratorTest {
     private final static int ALPHABET_UPPER_CASE_FIRST_ASCII_INDEX = 65;
     private final static int ALPHABET_LOWER_CASE_FIRST_ASCII_INDEX = 97;
 
-    private static ShorteningKeyGenerator shorteningKeyGenerator;
-
-    @BeforeAll
-    static void beforeAll() {
-        shorteningKeyGenerator = new ShorteningKeyGenerator();
-    }
+    private static ShorteningKeyGenerator shorteningKeyGenerator = new ShorteningKeyGenerator();
 
     @Test
     void test_단축_키_생성하기() {
@@ -35,7 +30,8 @@ public class ShorteningKeyGeneratorTest {
         for(int i = 0; i < TEST_MAX_COUNT; i++) {
             boolean isContainsNumber = strGenerateKey.matches(".*\\d.*");
 
-            Assertions.assertEquals(generatedKey.length, SHORTENING_MAX_LENGTH);
+            Assertions.assertTrue(generatedKey.length >= SHORTENING_MIN_LENGTH);
+            Assertions.assertTrue(generatedKey.length <= SHORTENING_MAX_LENGTH);
             Assertions.assertFalse(isContainsNumber);
         }
     }
