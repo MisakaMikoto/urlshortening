@@ -10,7 +10,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureWebMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
@@ -21,16 +20,12 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@AutoConfigureWebMvc
 @AutoConfigureMockMvc
-@SpringBootTest(classes={UrlshorteningApplication.class})
+@SpringBootTest(classes={UrlshorteningApplication.class}, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class ShorteningApiControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
-
-    @Autowired
-    private ShorteningKeyGeneratorService shorteningKeyGeneratorService;
 
     private static final String SHORTENING_KEY_GENERATE_URL = "/api/shortening-key";
     private static final String SHORTENING_KEY_REDIRECT_URL = "/api/redirecting-key";

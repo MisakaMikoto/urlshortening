@@ -2,7 +2,7 @@ spring:
   server.tomcat.uri-encoding: UTF-8
   datasource:
     platform: h2
-    jdbc-url: jdbc:h2:mem://localhost/~/shortening;
+    jdbc-url: jdbc:h2:mem://localhost/~/shortening
     username: sa
     password:
     driver-class-name: org.h2.Driver

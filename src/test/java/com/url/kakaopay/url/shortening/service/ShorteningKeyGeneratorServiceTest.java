@@ -5,14 +5,12 @@ import com.kakaopay.url.shortening.service.ShorteningKeyGeneratorService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureWebMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-@AutoConfigureWebMvc
-@SpringBootTest(classes={UrlshorteningApplication.class})
+@SpringBootTest(classes={UrlshorteningApplication.class}, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class ShorteningKeyGeneratorServiceTest {
 
     private final static int TEST_MAX_COUNT = 100;

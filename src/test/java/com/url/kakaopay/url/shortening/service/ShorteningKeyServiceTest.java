@@ -8,11 +8,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureWebMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@AutoConfigureWebMvc
-@SpringBootTest(classes={UrlshorteningApplication.class})
+@SpringBootTest(classes={UrlshorteningApplication.class}, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class ShorteningKeyServiceTest {
 
     private final static int TEST_MAX_COUNT = 100;
