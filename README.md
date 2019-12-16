@@ -9,14 +9,22 @@
     - Download - https://github.com/MisakaMikoto/urlshortening -> download -> zip download
     - extracting zip file
     - cmd or terminal open. move to the extracting file root path (ex: c:/document/urlshortening/)    
-    - build : gradlew build (build + jUnit test)    
-    - run : gradlew bootRun
+    - build 
+        - window : gradlew build (build + jUnit test)
+        - mac : chmod +x ./gradlew -> ./gradlew build
+    - run 
+        - window : gradlew bootRun
+        - mac : ./gradlew bootRun
 
   - Clone Guide
     - Checkout url - https://github.com/MisakaMikoto/urlshortening.git
     - cmd or terminal open. move to the checkout path (ex: c:/document/urlshortening/)
-    - build : gradlew build (build + jUnit test)    
-    - run : gradlew bootRun
+    - build 
+        - window : gradlew build (build + jUnit test)
+        - mac : chmod +x ./gradlew -> ./gradlew build
+    - run 
+        - window : gradlew bootRun
+        - mac : ./gradlew bootRun
     
   - Working Browser
     - Chrome
