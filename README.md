@@ -27,7 +27,7 @@
         - mac : ./gradlew bootRun
     
   - Working Browser
-    - Chrome
+    - Chrome (http://localhost:8081/url/shortening)
 
 - Problem Solving
 
