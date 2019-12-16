@@ -5,7 +5,6 @@ import com.google.gson.GsonBuilder;
 import com.kakaopay.url.UrlshorteningApplication;
 import com.kakaopay.url.shortening.dto.request.ShorteningKeyRequestDto;
 import com.kakaopay.url.shortening.dto.response.ShorteningKeyResponseDto;
-import com.kakaopay.url.shortening.service.ShorteningKeyGeneratorService;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

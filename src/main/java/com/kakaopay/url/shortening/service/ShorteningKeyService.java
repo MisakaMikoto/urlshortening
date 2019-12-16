@@ -2,6 +2,7 @@ package com.kakaopay.url.shortening.service;
 
 import com.kakaopay.url.shortening.entity.ShorteningKey;
 import com.kakaopay.url.shortening.repository.ShorteningKeyRepository;
+import com.kakaopay.url.shortening.service.impl.ShorteningKeyGeneratorServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,14 +14,14 @@ import java.util.Optional;
 public class ShorteningKeyService {
 
     private final ShorteningKeyRepository shorteningKeyRepository;
-    private final ShorteningKeyGeneratorService shorteningKeyGeneratorService;
+    private final ShorteningKeyGeneratorServiceImpl shorteningKeyGeneratorServiceImpl;
 
     public Optional<ShorteningKey> findShorteningKey(String originUrl) {
         return this.shorteningKeyRepository.findByOriginUrl(originUrl);
     }
 
     public String createShorteningKey() {
-        return String.valueOf(shorteningKeyGeneratorService.generate());
+        return String.valueOf(shorteningKeyGeneratorServiceImpl.generate());
     }
 
     @Transactional

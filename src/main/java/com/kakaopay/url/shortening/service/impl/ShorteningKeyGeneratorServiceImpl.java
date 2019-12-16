@@ -1,11 +1,12 @@
-package com.kakaopay.url.shortening.service;
+package com.kakaopay.url.shortening.service.impl;
 
+import com.kakaopay.url.shortening.service.ShorteningKeyGeneratorInterface;
 import org.springframework.stereotype.Service;
 
 import java.util.Random;
 
 @Service
-public class ShorteningKeyGeneratorService {
+public class ShorteningKeyGeneratorServiceImpl implements ShorteningKeyGeneratorInterface {
 
     private final static int SHORTENING_MIN_LENGTH = 4;
     private final static int SHORTENING_MAX_LENGTH = 8;
@@ -14,6 +15,7 @@ public class ShorteningKeyGeneratorService {
     private final static int ALPHABET_UPPER_CASE_FIRST_ASCII_INDEX = 65;
     private final static int ALPHABET_LOWER_CASE_FIRST_ASCII_INDEX = 97;
 
+    @Override
     public char[] generate() {
 
         int randomShorteningLength = this.createRandomShorteningMaxLength();
@@ -45,5 +47,4 @@ public class ShorteningKeyGeneratorService {
     private char generateLowerCase() {
         return (char)((int)(Math.random() * ALPHABET_LENGTH) + ALPHABET_LOWER_CASE_FIRST_ASCII_INDEX);
     }
-
 }
